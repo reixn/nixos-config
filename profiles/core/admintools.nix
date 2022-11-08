@@ -15,6 +15,7 @@
     ripgrep
     skim
     tealdeer
+    tree
     unzip
     wget
     whois
