@@ -12,6 +12,6 @@
     # Improve nix store disk usage
     autoOptimiseStore = true;
     optimise.automatic = true;
-    allowedUsers = [ "@wheel" ];
+    allowedUsers = [ "@wheel" "@users" ];
   };
 }
