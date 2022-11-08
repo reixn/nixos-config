@@ -11,7 +11,6 @@
     jq
     neovim
     nix-index
-    nmap
     ripgrep
     skim
     tealdeer
