@@ -10,7 +10,8 @@
       suites.laptop ++ [
         ../modules/xvim
         ((import profiles.xvim.suites.basic) "neovim")
-        profiles.vscode.suites.base 
+        profiles.vscode.suites.base
+        profiles.bottom
       ];
     
     xvim.neovim.base.enable = true;
