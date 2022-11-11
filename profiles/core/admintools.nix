@@ -16,7 +16,6 @@
     httpie
     bottom
     jq
-    neovim
     nix-index
     ripgrep
     skim

@@ -7,6 +7,7 @@
     coreutils
     git
     moreutils
+    neovim
   ];
 
   nix = {
