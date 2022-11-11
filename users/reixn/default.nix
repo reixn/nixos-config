@@ -12,6 +12,7 @@
         ((import profiles.xvim.suites.basic) "neovim")
         profiles.vscode.suites.base
         profiles.bottom
+        profiles.bat
       ];
     
     xvim.neovim.base.enable = true;
