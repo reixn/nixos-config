@@ -6,14 +6,12 @@
   };
 
   home-manager.users.reixn = {suites, profiles, pkgs, ...}: {
-    imports = 
-      suites.laptop ++ [
+    imports = [
         ../modules/xvim
         ((import profiles.xvim.suites.basic) "neovim")
-        profiles.vscode.suites.base
         profiles.bottom
         profiles.bat
-      ];
+    ];
     
     xvim.neovim.base.enable = true;
 

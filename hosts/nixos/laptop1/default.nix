@@ -59,7 +59,13 @@
   system.stateVersion = "22.05"; # Did you read the comment?
 
   home-manager.users = {
-    reixn = {...}: { home.stateVersion = "22.05"; };
+    reixn = { profiles, suites, pkgs, ...}: {
+      imports = suites.laptop ++ [
+        profiles.vscode.suites.base
+      ];
+
+      home.stateVersion = "22.05"; 
+    };
   };
 
   nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
