@@ -5,6 +5,7 @@
       default = {
         settings = {
           "browser.download.useDownloadDir" = false;
+          "browser.download.start_downloads_in_tmp_dir" = true;
 
           # add search in navbar
           "browser.search.widget.inNavBar" = true;
