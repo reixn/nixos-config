@@ -13,7 +13,7 @@
       };
       
       # Track channels with commits tested and built by hydra
-      nixos.url = "github:nixos/nixpkgs/nixos-22.05";
+      nixos.url = "github:nixos/nixpkgs/nixos-22.11";
       latest.url = "github:nixos/nixpkgs/nixos-unstable";
       
       digga.url = "github:divnix/digga";
@@ -22,7 +22,7 @@
       digga.inputs.home-manager.follows = "home";
       digga.inputs.deploy.follows = "deploy";
 
-      home.url = "github:nix-community/home-manager/release-22.05";
+      home.url = "github:nix-community/home-manager/release-22.11";
       home.inputs.nixpkgs.follows = "nixos";
 
       deploy.url = "github:serokell/deploy-rs";
