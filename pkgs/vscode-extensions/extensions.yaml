@@ -1,0 +1,4 @@
+- name: vscoq
+  publisher: maximedenes
+- name: vscode-antlr4
+  publisher: mike-lischke
