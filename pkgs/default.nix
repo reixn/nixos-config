@@ -6,6 +6,6 @@ final: prev: {
     (prev.callPackage ./vimPlugins { });
 
   vscode-extensions = prev.lib.recursiveUpdate prev.vscode-extensions
-    (prev.callPackage ./vscode-extensions.nix { });
+    (prev.callPackage ./vscode-extensions { });
   # then, call packages with `final.callPackage`
 }
