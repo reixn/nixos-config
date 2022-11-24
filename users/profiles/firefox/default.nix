@@ -21,6 +21,33 @@
           # don't ask to save passwords
           "signon.rememberSignons" = false;
         };
+        search = {
+          engines = {
+            "NixOS packages" = {
+              description = "Search NixOS packages by name or description.";
+              urls =  [
+                {
+                  template = "https://search.nixos.org/packages";
+                  params = [{ name = "query"; value = "{searchTerms}"; }];
+                }
+              ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = [ "@nixpkg" ];
+            };
+            "NixOS options" = {
+              description = "Search NixOS options by name or description.";
+              urls = [
+                {
+                  template = "https://search.nixos.org/options";
+                  params = [{ name = "query"; value = "{searchTerms}"; }];
+                }
+              ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = [ "@nixopt" ];
+            };
+          };
+          default = "Bing";
+        };
         isDefault = true;
       };
     };
