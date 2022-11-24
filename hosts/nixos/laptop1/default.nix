@@ -60,9 +60,10 @@
 
   home-manager.users = {
     reixn = { profiles, suites, pkgs, ...}: {
-      imports = suites.laptop ++ [
-        profiles.vscode.suites.base
-      ];
+      imports = suites.laptop ++
+        (with profiles.vscode; [
+          profiles.vscode.suites.base
+        ]);
 
       home.stateVersion = "22.05"; 
     };
