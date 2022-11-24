@@ -9,9 +9,11 @@
   users.mutableUsers = true;
 
   nix = {
-    # Improve nix store disk usage
-    autoOptimiseStore = true;
+    settings = {
+      # Improve nix store disk usage
+      auto-optimise-store = true;
+      allowed-users = [ "@wheel" "@users" ];
+    };
     optimise.automatic = true;
-    allowedUsers = [ "@wheel" "@users" ];
   };
 }
