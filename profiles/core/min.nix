@@ -10,6 +10,8 @@
     neovim
   ];
 
+  home-manager.backupFileExtension = "bak";
+
   nix = {
     settings = {
       # Prevents impurities in builds
