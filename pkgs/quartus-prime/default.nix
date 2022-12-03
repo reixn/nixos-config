@@ -22,6 +22,8 @@ in buildFHSUserEnv rec {
     xorg.libICE
     xorg.libSM
     zlib
+    dbus
+    libxcrypt
     # qsys requirements
     xorg.libXtst
     xorg.libXi
@@ -38,10 +40,8 @@ in buildFHSUserEnv rec {
     unixODBC
     libXft
     # common requirements
-    dbus
     freetype
     fontconfig
-    libxcrypt
     xorg.libX11
     xorg.libXext
     xorg.libXrender
