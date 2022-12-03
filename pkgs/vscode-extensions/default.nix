@@ -12,4 +12,10 @@
     version = "2.3.1";
     sha256 = "1sbkdg2bp0jgihmib36zfcvkcjgh1j3chphhs5ly7754mla09x7a";
   };
+  mshr-h.VerilogHDL = vscode-utils.extensionFromVscodeMarketplace {
+    name = "VerilogHDL";
+    publisher = "mshr-h";
+    version = "1.5.11";
+    sha256 = "0myr4i8sfdda5zd682qxly41860jhkfjv93jg095mnb4yy1gw8lv";
+  };
 }

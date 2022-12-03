@@ -2,3 +2,5 @@
   publisher: maximedenes
 - name: vscode-antlr4
   publisher: mike-lischke
+- name: VerilogHDL
+  publisher: mshr-h
