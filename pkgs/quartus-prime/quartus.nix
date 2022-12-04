@@ -1,4 +1,4 @@
-{ stdenv, lib, unstick, requireFile
+{ stdenv, lib, unstick, fetchurl
 , supportedDevices ? [ "Arria II" "Cyclone V" "Cyclone IV" "Cyclone 10 LP" "MAX II/V" "MAX 10 FPGA" ]
 }:
 
@@ -36,9 +36,9 @@ let
   version = "22.1std.0.915";
   downloadId = "757261"; # id in intel download page
 
-  download = {name, sha256}: requireFile {
+  download = {name, urlBase, sha256}: fetchurl {
     inherit name sha256;
-    url = "https://www.intel.com/content/www/us/en/software-kit/${downloadId}";
+    url = "https://cdrdv2.intel.com/v1/dl/getContent/${downloadId}/${urlBase}?filename=${name}";
   };
 
 in stdenv.mkDerivation rec {
@@ -47,12 +47,15 @@ in stdenv.mkDerivation rec {
 
   src = map download ([{
     name = "QuartusLiteSetup-${version}-linux.run";
+    urlBase = "757277";
     sha256 = "0h46s1d5dncmkrpjynqf3l4x7m6ch3d99lyh91sxgqg97ljrx9hl";
   } {
     name = "QuestaSetup-${version}-linux.run";
+    urlBase = "757277";
     sha256 = "1aqlh4xif96phmsp8ll73bn9nrd6zakhsf4c0cbc44j80fjwj6qx";
   }] ++ (map (id: {
     name = "${id}-${version}.qdz";
+    urlBase = "757278";
     sha256 = lib.getAttr id componentHashes;
   }) (lib.attrValues supportedDeviceIds)));
 
@@ -78,9 +81,11 @@ in stdenv.mkDerivation rec {
   in ''
       ${lib.concatMapStringsSep "\n" copyInstaller installers}
       ${lib.concatMapStringsSep "\n" copyComponent components}
+
       unstick $TEMP/${(builtins.head installers).name} \
         --disable-components ${lib.concatStringsSep "," disabledComponents} \
         --mode unattended --installdir $out --accept_eula 1
+
       rm -r $out/uninstall $out/logs
     '';
 

@@ -7,7 +7,7 @@ let
   desktopItem = makeDesktopItem {
     name = "quartus-prime-lite";
     exec = "quartus";
-    icon = "${unwrapped.outPath}/quartus/adm/quartusii.png";
+    icon = "quartus";
     desktopName = "Quartus";
     genericName = "Quartus Prime";
     categories = [ "Development" ];
@@ -60,20 +60,22 @@ in buildFHSUserEnv rec {
       "generate" "edit" "script"
     ];
     # Should we install all executables ?
-    modelsimExecutables = map (c: "modelsim_ase/bin/${c}") [
+    questaExecutables = map (c: "questa_fse/bin/${c}") [
       "vsim" "vlog" "vlib"
     ];
   in ''
-    mkdir -p $out/share/applications $out/share/icons/128x128
+    mkdir -p $out/share/applications $out/share/icons/hicolor/64x64/apps
     ln -s ${desktopItem}/share/applications/* $out/share/applications
-    ln -s ${unwrapped}/licenses/images/dc_quartus_panel_logo.png $out/share/icons/128x128/quartus.png
-    mkdir -p $out/quartus/bin $out/quartus/sopc_builder/bin $out/modelsim_ase/bin
+    ln -s ${unwrapped}/quartus/adm/quartusii.png $out/share/icons/hicolor/64x64/apps/quartus.png
+
+    mkdir -p $out/quartus/bin $out/quartus/sopc_builder/bin $out/questa_fse/bin
     WRAPPER=$out/bin/${name}
-    EXECUTABLES="${lib.concatStringsSep " " (quartusExecutables ++ qsysExecutables ++ modelsimExecutables)}"
+    EXECUTABLES="${lib.concatStringsSep " " (quartusExecutables ++ qsysExecutables ++ questaExecutables)}"
     for executable in $EXECUTABLES; do
         echo "#!${stdenv.shell}" >> $out/$executable
         echo "$WRAPPER ${unwrapped}/$executable \"\$@\"" >> $out/$executable
     done
+
     cd $out
     chmod +x $EXECUTABLES
     # link into $out/bin so executables become available on $PATH
