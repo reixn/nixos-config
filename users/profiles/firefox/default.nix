@@ -46,6 +46,7 @@
               definedAliases = [ "@nixopt" ];
             };
           };
+          force = true;
           default = "Bing";
         };
         isDefault = true;
