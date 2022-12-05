@@ -121,8 +121,8 @@
             profiles = digga.lib.rakeLeaves ./users/profiles;
             suites = with profiles; rec {
               base = [ direnv git ];
-              laptop = base ++ [ kde.suites.base firefox htop.laptop ];
-              server = base ++ [ htop.laptop tmux ];
+              laptop = base ++ [ kde.suites.base firefox tool.htop.laptop ];
+              server = base ++ [ tool.htop.laptop tmux ];
             };
           };
           users = {}; # digga.lib.importers.rakeLeaves ./users/hm;
