@@ -63,6 +63,7 @@
       imports = suites.laptop
         ++ (with profiles.vscode; [
           profiles.vscode.suites.base
+          language.yaml
         ])
         ++ [
           profiles.mail.evolution
