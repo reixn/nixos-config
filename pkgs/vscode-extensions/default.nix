@@ -15,7 +15,13 @@
   mshr-h.VerilogHDL = vscode-utils.extensionFromVscodeMarketplace {
     name = "VerilogHDL";
     publisher = "mshr-h";
-    version = "1.5.11";
-    sha256 = "0myr4i8sfdda5zd682qxly41860jhkfjv93jg095mnb4yy1gw8lv";
+    version = "1.5.13";
+    sha256 = "083xd3l8v352hk8cv807dl8rw4shzi6d5d8dyl402l325mgydgy6";
+  };
+  teabyii.ayu = vscode-utils.extensionFromVscodeMarketplace {
+    name = "ayu";
+    publisher = "teabyii";
+    version = "1.0.5";
+    sha256 = "1visv44mizfvsysrdby1vrncv1g3qmf45rhjijmbyak2d60nm0gq";
   };
 }
