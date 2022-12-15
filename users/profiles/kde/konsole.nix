@@ -2,7 +2,7 @@
   xdg.dataFile = {
     "konsole/default.profile".text = lib.generators.toINI {} {
       Appearance = {
-        ColorScheme = "One Dark";
+        ColorScheme = "One Half Light";
         Font = "Cascadia Code PL,10,-1,5,50,0,0,0,0,0";
       };
       "Cursor Options".CursorShape = 1; # I-beam
@@ -13,7 +13,7 @@
       Scrolling.HistorySize = 5000;
     };
 
-    "konsole/One Dark.colorscheme".text = lib.generators.toINI {} {
+    "konsole/One Half Dark.colorscheme".text = lib.generators.toINI {} {
       Background.Color = "40,44,52";
       BackgroundFaint.Color = "40,44,52";
       BackgroundIntense.Color = "40,44,52";
@@ -55,7 +55,53 @@
       ForegroundIntense.Color = "130,137,151";
 
       General = {
-        Description = "One Dark";
+        Description = "One Half Dark";
+        Opacity = 0.7;
+      };
+    };
+    "konsole/One Half Light.colorscheme".text = lib.generators.toINI {} {
+      Color0.Color = "56,58,66";
+      Color0Faint.Color="56,58,66";
+      Color0Intense.Color="56,58,66";
+
+      Color1.Color="228,86,73";
+      Color1Faint.Color="228,86,73";
+      Color1Intense.Color="228,86,73";
+
+      Color2.Color="80,161,79";
+      Color2Faint.Color="80,161,79";
+      Color2Intense.Color="80,161,79";
+
+      Color3.Color="193,132,1";
+      Color3Faint.Color="193,132,1";
+      Color3Intense.Color="193,132,1";
+
+      Color4.Color="1,132,188";
+      Color4Faint.Color="1,132,188";
+      Color4Intense.Color="1,132,188";
+
+      Color5.Color="166,38,164";
+      Color5Faint.Color="166,38,164";
+      Color5Intense.Color="166,38,164";
+
+      Color6.Color="9,151,179";
+      Color6Faint.Color="9,151,179";
+      Color6Intense.Color="9,151,179";
+
+      Color7.Color="250,250,250";
+      Color7Faint.Color="250,250,250";
+      Color7Intense.Color="250,250,250";
+
+      Foreground.Color="56,58,66";
+      ForegroundFaint.Color="56,58,66";
+      ForegroundIntense.Color="56,58,66";
+
+      Background.Color="250,250,250";
+      BackgroundFaint.Color="250,250,250";
+      BackgroundIntense.Color="250,250,250";
+
+      General = {
+        Description="OneHalf Light";
         Opacity = 0.7;
       };
     };
