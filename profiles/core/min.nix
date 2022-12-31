@@ -23,6 +23,7 @@
     extraOptions = ''
       min-free = 536870912
       fallback = true
+      experimental-features = ca-derivations
     '';
 
   };
