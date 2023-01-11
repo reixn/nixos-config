@@ -1,4 +1,8 @@
 { pkgs, lib, ...}: {
+  xdg.configFile."konsolerc".text = lib.generators.toINI {} {
+    "Desktop Entry".DefaultProfile = "default.profile";
+    TabBar.NewTabBehavior = "PutNewTabAfterCurrentTab";
+  };
   xdg.dataFile = {
     "konsole/default.profile".text = lib.generators.toINI {} {
       Appearance = {
