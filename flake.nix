@@ -79,10 +79,6 @@
             });
           })
 
-          nur.overlay
-          agenix.overlay
-          nvfetcher.overlay
-
           (import ./pkgs)
         ];
 
