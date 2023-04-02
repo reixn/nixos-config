@@ -15,7 +15,7 @@
     xvim.neovim.base.enable = true;
 
     programs.git = {
-      userName = "reixn";
+      userName = "Kyle Rogers";
       userEmail = "reixn@outlook.com";
     };
   };
