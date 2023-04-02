@@ -6,7 +6,8 @@
       ./hardware-configuration.nix
       profiles.core.admintools
       profiles.plasma
-      profiles.starship
+      profiles.tools.bat
+      profiles.tools.starship
     ];
 
   # Bootloader.
