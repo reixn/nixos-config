@@ -60,6 +60,27 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.05"; # Did you read the comment?
 
+  environment = {
+    systemPackages = [pkgs.fscrypt-experimental];
+
+    etc."fscrypt.conf".source = (pkgs.formats.json {}).generate "fscrypt.conf" {
+      source = "custom_passphrase";
+      hash_costs = {
+        time = "2170";
+        memory = "131072";
+        parallelism = "8";
+      };
+      options =  {
+        padding = "32";
+        contents =  "AES_256_XTS";
+        filenames = "AES_256_CTS";
+        policy_version = "2";
+      };
+      use_fs_keyring_for_v1_policies =  false;
+      allow_cross_user_metadata = false;
+    }; 
+  };
+
   home-manager.users = {
     reixn = { profiles, suites, pkgs, ...}: {
       imports = suites.laptop
