@@ -3,8 +3,8 @@
   maximedenes.vscoq = vscode-utils.extensionFromVscodeMarketplace {
     name = "vscoq";
     publisher = "maximedenes";
-    version = "0.3.6";
-    sha256 = "1sailpizg7zvncggdma9dyxdnga8jya1a2vswwij1rzd9il04j3g";
+    version = "0.3.8";
+    sha256 = "12qyvc0d1m0i5mxmjp1swq7sd6ch6yi9v0f14hz64lig3clgjmfh";
   };
   mike-lischke.vscode-antlr4 = vscode-utils.extensionFromVscodeMarketplace {
     name = "vscode-antlr4";
@@ -15,13 +15,19 @@
   mshr-h.VerilogHDL = vscode-utils.extensionFromVscodeMarketplace {
     name = "VerilogHDL";
     publisher = "mshr-h";
-    version = "1.5.13";
-    sha256 = "083xd3l8v352hk8cv807dl8rw4shzi6d5d8dyl402l325mgydgy6";
+    version = "1.11.4";
+    sha256 = "0glfzz3cnj37ip4qn1va7nykly8dlfkmzg6bpw3lq8knldwk95p0";
   };
   teabyii.ayu = vscode-utils.extensionFromVscodeMarketplace {
     name = "ayu";
     publisher = "teabyii";
     version = "1.0.5";
     sha256 = "1visv44mizfvsysrdby1vrncv1g3qmf45rhjijmbyak2d60nm0gq";
+  };
+  tamasfe.even-better-toml = vscode-utils.extensionFromVscodeMarketplace {
+    name = "even-better-toml";
+    publisher = "tamasfe";
+    version = "0.19.0";
+    sha256 = "0xfnprgbafy7sfdqwdw92lr8k3h3fbylvhq1swgv31akndm9191j";
   };
 }

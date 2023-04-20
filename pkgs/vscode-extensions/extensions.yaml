@@ -4,5 +4,7 @@
   publisher: mike-lischke
 - name: VerilogHDL
   publisher: mshr-h
-- name : ayu
+- name: ayu
   publisher: teabyii
+- name: even-better-toml
+  publisher: tamasfe
