@@ -45,6 +45,20 @@
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
               definedAliases = [ "@nixopt" ];
             };
+            "Bing Global" = {
+              description = "Bing Global";
+              urls = [
+                {
+                  template = "https://global.bing.com";
+                  params = [
+                    { name = "q"; value = "{searchTerms}"; }
+                    { name = "mkt"; value = "en-US"; }
+                  ];
+                }
+              ];
+              icon = "https://global.bing.com/sa/simg/favicon-trans-bg-blue-mg.ico";
+              definedAliases = [ "@gbing" ];
+            };
           };
           force = true;
           default = "Bing";
