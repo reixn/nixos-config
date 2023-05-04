@@ -90,6 +90,7 @@
         ])
         ++ [
           profiles.mail.evolution
+          profiles.tool.gh
         ];
 
       home.stateVersion = "22.05"; 
