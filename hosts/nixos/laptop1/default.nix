@@ -54,13 +54,18 @@
   services.fstrim.enable = true;
 
   networking.hosts = {
-    "127.0.0.1" = [ "ajax.googleapis.com" ];
+    "127.0.0.1" = [
+      "ajax.googleapis.com"
+      "ghc.haskell.home.arpa"
+      "haddock.haskell.home.arpa"
+    ];
   };
   containers.mirror = {
     autoStart = false;
     config = { ... }: {
       imports = [
         profiles.mirror.googleapis.ajax
+        profiles.mirror.haskell.ghc
       ];
     };
   };
