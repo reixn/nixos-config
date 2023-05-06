@@ -8,6 +8,7 @@
       profiles.plasma
       profiles.tools.bat
       profiles.tools.starship
+      profiles.mirror.container
     ];
 
   # Bootloader.
@@ -51,6 +52,18 @@
   };
 
   services.fstrim.enable = true;
+
+  networking.hosts = {
+    "127.0.0.1" = [ "ajax.googleapis.com" ];
+  };
+  containers.mirror = {
+    autoStart = false;
+    config = { ... }: {
+      imports = [
+        profiles.mirror.googleapis.ajax
+      ];
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
