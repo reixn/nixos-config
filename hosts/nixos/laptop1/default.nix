@@ -20,6 +20,13 @@
     };
   };
 
+  swapDevices =
+    [ { 
+        device = "/dev/disk/by-partuuid/9acc2165-bb49-c243-ac05-178f2505685b";
+        randomEncryption.enable = true;
+      }
+    ];
+
   networking = {
     # Enable networking
     networkmanager.enable = true;
