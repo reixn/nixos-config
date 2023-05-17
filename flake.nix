@@ -14,6 +14,7 @@
       
       # Track channels with commits tested and built by hydra
       nixos.url = "github:nixos/nixpkgs/nixos-22.11";
+      nixpkgs.follows = "nixos";
       latest.url = "github:nixos/nixpkgs/nixos-unstable";
       
       digga.url = "github:divnix/digga";
@@ -24,6 +25,8 @@
 
       home.url = "github:nix-community/home-manager/release-22.11";
       home.inputs.nixpkgs.follows = "nixos";
+
+      impermanence.url = "github:nix-community/impermanence";
 
       deploy.url = "github:serokell/deploy-rs";
       deploy.inputs.nixpkgs.follows = "nixos";
@@ -47,8 +50,8 @@
     , digga
     , nixos
     , home
+    , impermanence
     , nixos-hardware
-    , nur
     , agenix
     , nvfetcher
     , deploy
@@ -109,7 +112,7 @@
             };
           };
         };
-        
+
         home = {
           imports = [ (digga.lib.importExportableModules ./users/modules) ];
           modules = [ ];

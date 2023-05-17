@@ -296,6 +296,21 @@
         "type": "github"
       }
     },
+    "impermanence": {
+      "locked": {
+        "lastModified": 1684264534,
+        "narHash": "sha256-K0zr+ry3FwIo3rN2U/VWAkCJSgBslBisvfRIPwMbuCQ=",
+        "owner": "nix-community",
+        "repo": "impermanence",
+        "rev": "89253fb1518063556edd5e54509c30ac3089d5e6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "impermanence",
+        "type": "github"
+      }
+    },
     "latest": {
       "locked": {
         "lastModified": 1683014792,
@@ -429,30 +444,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 0,
-        "narHash": "sha256-CbDAP6wttlaVs9s4DPZlJ5Wf6Ozz9lX7SdJVtFA8cAo=",
-        "path": "/nix/store/5fakbhysi9cg58sl2ds7h5wh3imkl463-source",
-        "type": "path"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nur": {
-      "locked": {
-        "lastModified": 0,
-        "narHash": "sha256-xsOyHO2y/AeSIqR7mEOIotLJQnc60PhlJuCU5a6SBgU=",
-        "path": "/nix/store/gswi53lkv6msrxwsr64d76wbx74d4hnj-source",
-        "type": "path"
-      },
-      "original": {
-        "id": "nur",
-        "type": "indirect"
-      }
-    },
     "nvfetcher": {
       "inputs": {
         "flake-compat": "flake-compat_4",
@@ -482,13 +473,15 @@
         "digga": "digga",
         "flake-compat": "flake-compat_3",
         "home": "home",
+        "impermanence": "impermanence",
         "latest": "latest",
         "naersk": "naersk",
         "nixos": "nixos",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_2",
-        "nur": "nur",
+        "nixpkgs": [
+          "nixos"
+        ],
         "nvfetcher": "nvfetcher"
       }
     },

@@ -13,15 +13,32 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/2a538337-5cd8-4d59-8d43-42ef24c32b6a";
-      fsType = "ext4";
-    };
-
-  fileSystems."/boot/efi" =
-    { device = "/dev/disk/by-uuid/790B-421C";
+  fileSystems = {
+    "/boot/efi" = {
+      device = "/dev/disk/by-uuid/66CF-3A7F";
       fsType = "vfat";
     };
+    "/nix" = {
+      device = "/dev/disk/by-uuid/40ee85a5-f1d8-4f5e-812a-97f199290569";
+      fsType = "ext4";
+      options = ["noatime"];
+    };
+  };
+
+  boot.initrd.luks.devices."nixos-root" = {
+    device = "/dev/disk/by-uuid/57995db4-ffde-4db3-a603-5eedd663f675";
+    allowDiscards = true;
+  };
+
+  swapDevices =
+    [ {
+        device = "/dev/disk/by-partuuid/52129fcd-ab55-443c-9772-8c9df2fb6c29";
+        randomEncryption = {
+          enable = true;
+          allowDiscards = true;
+        };
+      }
+    ];
 
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

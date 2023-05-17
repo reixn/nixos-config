@@ -1,9 +1,10 @@
-{ profiles, suites, pkgs, ... }:
+{ inputs, profiles, suites, pkgs, ... }:
 {
   imports =
     suites.base ++ [
        # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      inputs.impermanence.nixosModules.impermanence
       profiles.core.admintools
       profiles.plasma
       profiles.tools.bat
@@ -20,12 +21,33 @@
     };
   };
 
-  swapDevices =
-    [ { 
-        device = "/dev/disk/by-partuuid/9acc2165-bb49-c243-ac05-178f2505685b";
-        randomEncryption.enable = true;
-      }
+  fileSystems = {
+    "/" = {
+      device = "tmpfs";
+      fsType = "tmpfs";
+      options = [ "size=2G" "mode=755" ];
+    };
+  };
+  environment.etc."shadow".source = "/nix/presist/etc/shadow";
+  environment.persistence."/nix/presist" = {
+    directories = [
+      "/etc/nixos"
+      "/.fscrypt"
+      "/etc/NetworkManager/system-connections"
     ];
+    files = [
+      "/etc/machine-id"
+    ];
+    users = {
+      reixn = {
+        directories = [
+          { directory = ".ssh"; mode = "0700"; }
+          "Source"
+          "Documents"
+        ];
+      };
+    };
+  };
 
   networking = {
     # Enable networking
@@ -65,27 +87,24 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "22.11"; # Did you read the comment?
 
-  environment = {
-    systemPackages = [pkgs.fscrypt-experimental];
-
-    etc."fscrypt.conf".source = (pkgs.formats.json {}).generate "fscrypt.conf" {
-      source = "custom_passphrase";
-      hash_costs = {
-        time = "2170";
-        memory = "131072";
-        parallelism = "8";
-      };
-      options =  {
-        padding = "32";
-        contents =  "AES_256_XTS";
-        filenames = "AES_256_CTS";
-        policy_version = "2";
-      };
-      use_fs_keyring_for_v1_policies =  false;
-      allow_cross_user_metadata = false;
-    }; 
+  environment.systemPackages = [pkgs.fscrypt-experimental];
+  environment.etc."fscrypt.conf".source = (pkgs.formats.json {}).generate "fscrypt.conf" {
+    source = "custom_passphrase";
+    hash_costs = {
+      time = "2170";
+      memory = "131072";
+      parallelism = "8";
+    };
+    options =  {
+      padding = "32";
+      contents =  "AES_256_XTS";
+      filenames = "AES_256_CTS";
+      policy_version = "2";
+    };
+    use_fs_keyring_for_v1_policies =  false;
+    allow_cross_user_metadata = false;
   };
 
   home-manager.users = {
@@ -100,7 +119,7 @@
           profiles.tool.gh
         ];
 
-      home.stateVersion = "22.05"; 
+      home.stateVersion = "22.11";
     };
   };
 
