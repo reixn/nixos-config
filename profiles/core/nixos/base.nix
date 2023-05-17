@@ -6,8 +6,6 @@
 
   boot.tmpOnTmpfs = true;
   
-  users.mutableUsers = true;
-
   nix = {
     settings = {
       # Improve nix store disk usage

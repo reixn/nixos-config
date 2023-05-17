@@ -28,11 +28,9 @@
       options = [ "size=2G" "mode=755" ];
     };
   };
-  environment.etc."shadow".source = "/nix/presist/etc/shadow";
   environment.persistence."/nix/presist" = {
     directories = [
       "/etc/nixos"
-      "/.fscrypt"
       "/etc/NetworkManager/system-connections"
     ];
     files = [
@@ -45,6 +43,18 @@
           "Source"
           "Documents"
         ];
+      };
+    };
+  };
+  users = {
+    mutableUsers = false;
+    users = let
+      pass-store = "/nix/user-pass";
+    in {
+      reixn = {
+        uid = 1000;
+        passwordFile = "${pass-store}/reixn";
+        createHome = true;
       };
     };
   };
