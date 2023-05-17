@@ -35,6 +35,7 @@
     ];
     files = [
       "/etc/machine-id"
+      "/var/lib/systemd/timers/stamp-fstrim.timer"
     ];
     users = {
       reixn = {
