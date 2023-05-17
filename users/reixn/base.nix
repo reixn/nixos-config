@@ -9,7 +9,6 @@
     imports = [
         ../modules/xvim
         ((import profiles.xvim.suites.basic) "neovim")
-        profiles.tool.bottom
     ];
     
     xvim.neovim.base.enable = true;

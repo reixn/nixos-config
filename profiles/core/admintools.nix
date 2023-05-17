@@ -4,9 +4,7 @@
   environment.systemPackages = with pkgs; [
     bat
     curl
-    direnv
     dogdns
-    delta
     duf
     du-dust
     dnsutils
@@ -14,13 +12,8 @@
     fd
     htop
     httpie
-    bottom
     jq
-    nix-index
     ripgrep
-    skim
-    tealdeer
-    tree
     unzip
     wget
     whois
