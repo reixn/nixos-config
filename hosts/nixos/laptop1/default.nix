@@ -42,6 +42,10 @@
           { directory = ".ssh"; mode = "0700"; }
           "Source"
           "Documents"
+          ".mozilla/firefox/default/bookmarkbackups"
+        ];
+        files = [
+          ".mozilla/firefox/default/favicons.sqlite"
         ];
       };
     };
