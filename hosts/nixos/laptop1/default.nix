@@ -89,10 +89,10 @@
     #media-session.enable = true;
   };
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = false;
-  };
+  #hardware.bluetooth = {
+  #  enable = true;
+  #  powerOnBoot = false;
+  #};
 
   services.fstrim.enable = true;
 
