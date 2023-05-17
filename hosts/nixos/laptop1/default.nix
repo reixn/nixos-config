@@ -112,6 +112,7 @@
       imports = suites.laptop
         ++ (with profiles.vscode; [
           profiles.vscode.suites.base
+          theme.ayu-light
           language.yaml
         ])
         ++ [
