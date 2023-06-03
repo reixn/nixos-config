@@ -47,6 +47,7 @@
           ".mozilla/firefox/default/bookmarkbackups"
         ];
         files = [
+          ".config/gh/hosts.yml"
           ".mozilla/firefox/default/favicons.sqlite"
         ];
       };
