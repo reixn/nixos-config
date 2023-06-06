@@ -3,8 +3,6 @@
   imports = [
     ../min.nix
   ];
-
-  boot.tmpOnTmpfs = true;
   
   nix = {
     settings = {
