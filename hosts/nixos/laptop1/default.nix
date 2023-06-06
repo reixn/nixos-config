@@ -1,15 +1,15 @@
-{ inputs, profiles, suites, pkgs, ... }:
+{ inputs, profiles, users, suites, pkgs, ... }:
 {
-  imports =
-    suites.base ++ [
-       # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.impermanence.nixosModules.impermanence
-      profiles.core.admintools
-      profiles.plasma
-      profiles.tools.bat
-      profiles.tools.starship
-    ];
+  imports = [
+     # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    suites.base
+    profiles.core.admintools
+    profiles.plasma
+    profiles.tools.bat
+    profiles.tools.starship
+    users.reixn.base
+  ];
 
   # Bootloader.
   boot.loader = {
@@ -67,6 +67,7 @@
   };
 
   networking = {
+    hostName = "laptop1";
     # Enable networking
     networkmanager.enable = true;
   };
@@ -126,17 +127,16 @@
 
   home-manager.users = {
     reixn = { profiles, suites, pkgs, ...}: {
-      imports = suites.laptop
-        ++ (with profiles.vscode; [
-          profiles.vscode.suites.base
-          theme.ayu-light
-          language.yaml
-        ])
-        ++ [
-          profiles.kde.bluedevil
-          profiles.mail.evolution
-          profiles.tool.gh
-        ];
+      imports = [
+        suites.laptop
+        profiles.kde.bluedevil
+        profiles.mail.evolution
+        profiles.tool.gh
+      ] ++ (with profiles.vscode; [
+        profiles.vscode.suites.base
+        theme.ayu-light
+        language.nix
+      ]);
 
       home.stateVersion = "22.11";
     };

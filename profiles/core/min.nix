@@ -1,8 +1,5 @@
 { pkgs, ... }:
 {
-  # Sets nrdxp.cachix.org binary cache which just speeds up some builds
-  imports = [ ../cachix ];
-
   environment.systemPackages = with pkgs; [
     coreutils
     git
@@ -23,7 +20,7 @@
     extraOptions = ''
       min-free = 536870912
       fallback = true
-      experimental-features = ca-derivations
+      experimental-features = nix-command flakes ca-derivations
     '';
 
   };

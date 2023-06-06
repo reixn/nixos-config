@@ -1,0 +1,3 @@
+{
+  xvim = import ./xvim;
+}

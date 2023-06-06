@@ -1,1 +1,0 @@
-(import ./mkTheme) { name = "nord"; pkg = "nord-vim"; }
