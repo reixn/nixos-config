@@ -58,6 +58,12 @@
     users = let
       pass-store = "/nix/user-pass";
     in {
+      dave = {
+        uid = 1010;
+        isNormalUser = true;
+        passwordFile = "${pass-store}/dave";
+        createHome = true;
+      };
       reixn = {
         uid = 1000;
         passwordFile = "${pass-store}/reixn";
@@ -139,6 +145,14 @@
       ]);
 
       home.stateVersion = "22.11";
+    };
+    dave = { profiles, suites, ... }: {
+      imports = [
+        suites.laptop
+        profiles.kde.bluedevil
+      ];
+
+      home.stateVersion = "23.05";
     };
   };
 
