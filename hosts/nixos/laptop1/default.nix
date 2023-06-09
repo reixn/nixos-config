@@ -42,8 +42,10 @@
       reixn = {
         directories = [
           { directory = ".ssh"; mode = "0700"; }
+          { directory = ".gnupg"; mode = "0700"; }
           "Source"
           "Documents"
+          ".local/share/gopass/stores"
           ".mozilla/firefox/default/bookmarkbackups"
         ];
         files = [
@@ -136,6 +138,7 @@
       imports = [
         suites.laptop
         profiles.kde.bluedevil
+        profiles.gpg
         profiles.mail.evolution
         profiles.tool.gh
       ] ++ (with profiles.vscode; [
@@ -143,6 +146,10 @@
         theme.ayu-light
         language.nix
       ]);
+
+      home.packages = [
+        pkgs.gopass
+      ];
 
       home.stateVersion = "22.11";
     };
