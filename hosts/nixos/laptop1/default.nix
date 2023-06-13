@@ -50,7 +50,7 @@
         ];
         files = [
           ".config/gh/hosts.yml"
-          ".mozilla/firefox/default/favicons.sqlite"
+          ".mozilla/firefox/default/places.sqlite"
         ];
       };
     };
