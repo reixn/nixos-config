@@ -34,11 +34,13 @@ let
   };
 
   version = "22.1std.0.915";
-  downloadId = "757261"; # id in intel download page
+  urlFirst = "22.1std";
+  urlSecond = "915";
 
-  download = {name, urlBase, sha256}: fetchurl {
+  download = {name, sha256}: fetchurl {
     inherit name sha256;
-    url = "https://cdrdv2.intel.com/v1/dl/getContent/${downloadId}/${urlBase}?filename=${name}";
+    # e.g. "20.1.1.720" -> "20.1std.1/720"
+    url = "https://downloads.intel.com/akdlm/software/acdsinst/${urlFirst}/${urlSecond}/ib_installers/${name}";
   };
 
 in stdenv.mkDerivation rec {
@@ -47,15 +49,12 @@ in stdenv.mkDerivation rec {
 
   src = map download ([{
     name = "QuartusLiteSetup-${version}-linux.run";
-    urlBase = "757277";
     sha256 = "0h46s1d5dncmkrpjynqf3l4x7m6ch3d99lyh91sxgqg97ljrx9hl";
   } {
     name = "QuestaSetup-${version}-linux.run";
-    urlBase = "757277";
     sha256 = "1aqlh4xif96phmsp8ll73bn9nrd6zakhsf4c0cbc44j80fjwj6qx";
   }] ++ (map (id: {
     name = "${id}-${version}.qdz";
-    urlBase = "757278";
     sha256 = lib.getAttr id componentHashes;
   }) (lib.attrValues supportedDeviceIds)));
 
