@@ -15,6 +15,7 @@
     jq
     ripgrep
     unzip
+    lzip
     wget
     whois
   ];
