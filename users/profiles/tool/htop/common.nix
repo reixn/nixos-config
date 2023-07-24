@@ -23,6 +23,7 @@
       show_thread_names = true;
       show_program_path = false;
       tree_view = true;
+      screen_tabs = true;
       detailed_cpu_time = true;
       show_cpu_frequency = true;
       show_cpu_temperature = profile != "server";
