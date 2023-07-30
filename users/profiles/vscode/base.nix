@@ -7,6 +7,7 @@
       "editor.formatOnSave" = true;
       "editor.formatOnType" = true;
       "terminal.integrated.cursorStyle" = "line";
+      "extensions.autoUpdate" = false;
     };
   };
 }
