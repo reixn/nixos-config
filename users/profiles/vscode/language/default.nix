@@ -5,6 +5,7 @@
   dhall = import ./dhall.nix;
   haskell = import ./haskell.nix;
   nix = import ./nix.nix;
+  ocaml = import ./ocaml.nix;
   powershell = import ./powershell.nix;
   python = import ./python.nix;
   ron = import ./ron.nix;

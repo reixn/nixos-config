@@ -3,7 +3,7 @@ final: prev: {
   sources = prev.callPackage (import ./_sources/generated.nix) { };
 
   quartus-prime = prev.callPackage ./quartus-prime {};
-  
+
   vimPlugins = prev.lib.recursiveUpdate prev.vimPlugins
     (prev.callPackage ./vimPlugins { });
 
