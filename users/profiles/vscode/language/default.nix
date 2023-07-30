@@ -1,6 +1,7 @@
 {
   antlr4 = import ./antlr4.nix;
   coq = import ./coq.nix;
+  cpp = import ./cpp.nix;
   dhall = import ./dhall.nix;
   haskell = import ./haskell.nix;
   nix = import ./nix.nix;
