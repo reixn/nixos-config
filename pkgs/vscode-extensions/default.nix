@@ -30,4 +30,10 @@
     version = "0.19.2";
     sha256 = "0q9z98i446cc8bw1h1mvrddn3dnpnm2gwmzwv2s3fxdni2ggma14";
   };
+  ziglang.vscode-zig = vscode-utils.extensionFromVscodeMarketplace {
+    name = "vscode-zig";
+    publisher = "ziglang";
+    version = "0.4.2";
+    sha256 = "0k56ildn16sd24fcpabgxrn1r1arpjjbsra9whg4l73rnrb435nv";
+  };
 }

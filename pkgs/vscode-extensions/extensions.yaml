@@ -8,3 +8,5 @@
   publisher: teabyii
 - name: even-better-toml
   publisher: tamasfe
+- name: vscode-zig
+  publisher: ziglang

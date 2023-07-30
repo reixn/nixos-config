@@ -12,4 +12,5 @@
   toml = import ./toml.nix;
   verilog = import ./verilog.nix;
   yaml = import ./yaml.nix;
+  zig = import ./zig.nix;
 }

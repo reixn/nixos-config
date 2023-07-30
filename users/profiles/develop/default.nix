@@ -4,4 +4,5 @@
   haskell = import ./haskell.nix;
   python = import ./python.nix;
   rust = import ./rust.nix;
+  zig = import ./zig.nix;
 }
