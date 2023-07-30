@@ -10,3 +10,5 @@
   publisher: tamasfe
 - name: vscode-zig
   publisher: ziglang
+- name: kotlin
+  publisher: fwcd

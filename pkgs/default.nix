@@ -9,5 +9,7 @@ final: prev: {
 
   vscode-extensions = prev.lib.recursiveUpdate prev.vscode-extensions
     (prev.callPackage ./vscode-extensions { });
+
+  kotlin-debug-adapter = prev.callPackage ./kotlin-debug-adapter.nix {};
   # then, call packages with `final.callPackage`
 }

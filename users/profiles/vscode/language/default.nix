@@ -5,6 +5,7 @@
   dhall = import ./dhall.nix;
   gradle = import ./gradle.nix;
   haskell = import ./haskell.nix;
+  kotlin = import ./kotlin.nix;
   nix = import ./nix.nix;
   ocaml = import ./ocaml.nix;
   powershell = import ./powershell.nix;

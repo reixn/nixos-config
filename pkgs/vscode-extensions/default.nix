@@ -36,4 +36,10 @@
     version = "0.4.2";
     sha256 = "0k56ildn16sd24fcpabgxrn1r1arpjjbsra9whg4l73rnrb435nv";
   };
+  fwcd.kotlin = vscode-utils.extensionFromVscodeMarketplace {
+    name = "kotlin";
+    publisher = "fwcd";
+    version = "0.2.31";
+    sha256 = "1yngrbqndb7jccmakpjv98y8amffvk2zbj3dhz0khdxz6ym18vb3";
+  };
 }
