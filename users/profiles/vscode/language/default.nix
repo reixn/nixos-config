@@ -3,6 +3,7 @@
   coq = import ./coq.nix;
   cpp = import ./cpp.nix;
   dhall = import ./dhall.nix;
+  gradle = import ./gradle.nix;
   haskell = import ./haskell.nix;
   nix = import ./nix.nix;
   ocaml = import ./ocaml.nix;
