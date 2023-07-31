@@ -4,8 +4,8 @@
       ms-python.python
     ];
     userSettings = {
-      "python.formatting.provider" = "yapf";
-      "python.formatting.yapfPath" = "${pkgs.yapf}/bin/yapf";
+      "python.formatting.provider" = "black";
+      "python.formatting.blackPath" = "${pkgs.black}/bin/black";
     };
   };
 }
