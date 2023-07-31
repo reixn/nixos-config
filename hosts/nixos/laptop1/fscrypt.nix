@@ -1,6 +1,9 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 {
-  environment.systemPackages = [pkgs.fscrypt-experimental];
+  environment.systemPackages = with pkgs; [
+    fscryptctl
+    fscrypt-experimental
+  ];
   environment.etc."fscrypt.conf".source = (pkgs.formats.json {}).generate "fscrypt.conf" {
     source = "custom_passphrase";
     hash_costs = {
