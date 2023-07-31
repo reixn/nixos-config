@@ -7,5 +7,6 @@
   ocaml = import ./ocaml.nix;
   python = import ./python.nix;
   rust = import ./rust.nix;
+  scala = import ./scala.nix;
   zig = import ./zig.nix;
 }
