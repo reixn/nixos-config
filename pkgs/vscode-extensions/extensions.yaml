@@ -1,13 +1,9 @@
-- name: vscoq
-  publisher: maximedenes
 - name: vscode-antlr4
   publisher: mike-lischke
 - name: VerilogHDL
   publisher: mshr-h
 - name: ayu
   publisher: teabyii
-- name: even-better-toml
-  publisher: tamasfe
 - name: vscode-zig
   publisher: ziglang
 - name: kotlin
