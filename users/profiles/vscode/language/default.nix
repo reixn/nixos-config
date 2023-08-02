@@ -4,6 +4,7 @@
   cpp = import ./cpp.nix;
   dhall = import ./dhall.nix;
   gradle = import ./gradle.nix;
+  graphql = import ./graphql.nix;
   haskell = import ./haskell.nix;
   kotlin = import ./kotlin.nix;
   nix = import ./nix.nix;
