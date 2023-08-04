@@ -6,6 +6,7 @@
   gradle = import ./gradle.nix;
   graphql = import ./graphql.nix;
   haskell = import ./haskell.nix;
+  java = import ./java.nix;
   kotlin = import ./kotlin.nix;
   nix = import ./nix.nix;
   ocaml = import ./ocaml.nix;
