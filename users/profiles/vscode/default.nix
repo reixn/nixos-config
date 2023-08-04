@@ -5,6 +5,7 @@ let
     spell = import ./spell.nix;
     theme.ayu-light = import ./theme/ayu-light.nix;
     language = import ./language;
+    tools = import ./tools;
   };
 in config // {
   suites = {
