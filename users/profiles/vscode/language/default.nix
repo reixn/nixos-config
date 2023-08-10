@@ -16,6 +16,7 @@
   rust = import ./rust.nix;
   scala = import ./scala.nix;
   toml = import ./toml.nix;
+  typst = import ./typst.nix;
   verilog = import ./verilog.nix;
   yaml = import ./yaml.nix;
   zig = import ./zig.nix;

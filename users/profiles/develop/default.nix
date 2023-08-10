@@ -8,5 +8,6 @@
   python = import ./python.nix;
   rust = import ./rust.nix;
   scala = import ./scala.nix;
+  typst = import ./typst.nix;
   zig = import ./zig.nix;
 }
