@@ -8,6 +8,7 @@
   haskell = import ./haskell.nix;
   java = import ./java.nix;
   kotlin = import ./kotlin.nix;
+  latex = import ./latex.nix;
   nix = import ./nix.nix;
   ocaml = import ./ocaml.nix;
   powershell = import ./powershell.nix;
