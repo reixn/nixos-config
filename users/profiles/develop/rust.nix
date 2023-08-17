@@ -1,9 +1,12 @@
 { pkgs, ...}: {
-  home.packages = [
-    pkgs.cargo
-    pkgs.rustc
-    pkgs.rustc.doc
-    pkgs.rustfmt
-    pkgs.gcc
+  home.packages = with pkgs; [
+    cargo
+    rustc
+    rustc.doc
+    rustfmt
+    clippy
+    rust-bindgen
+    rust-cbindgen
+    gcc
   ];
 }
