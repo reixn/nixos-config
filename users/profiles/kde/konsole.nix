@@ -1,20 +1,37 @@
-{ pkgs, lib, ...}: {
+{ pkgs, lib, ...}:
+let
+  cascadia = "Cascadia Code PL,10,-1,5,50,0,0,0,0,0";
+  historySize = 5000;
+in {
   xdg.configFile."konsolerc".text = lib.generators.toINI {} {
-    "Desktop Entry".DefaultProfile = "default.profile";
+    "Desktop Entry".DefaultProfile = "default_light.profile";
     TabBar.NewTabBehavior = "PutNewTabAfterCurrentTab";
   };
   xdg.dataFile = {
-    "konsole/default.profile".text = lib.generators.toINI {} {
+    "konsole/default_light.profile".text = lib.generators.toINI {} {
       Appearance = {
         ColorScheme = "One Half Light";
-        Font = "Cascadia Code PL,10,-1,5,50,0,0,0,0,0";
+        Font = cascadia;
       };
       "Cursor Options".CursorShape = 1; # I-beam
       General = {
-        Name = "default";
+        Name = "default (light)";
         Parent = "FALLBACK/";
       };
-      Scrolling.HistorySize = 5000;
+      Scrolling.HistorySize = historySize;
+    };
+
+    "konsole/default_dark.profile".text = lib.generators.toINI {} {
+      Appearance = {
+        ColorScheme = "One Half Dark";
+        Font = cascadia;
+      };
+      "Cursor Options".CursorShape = 1;
+      General = {
+        Name = "default (dark)";
+        Parent = "FALLBACK/";
+      };
+      Scrolling.HistorySize = historySize;
     };
 
     "konsole/One Half Dark.colorscheme".text = lib.generators.toINI {} {
