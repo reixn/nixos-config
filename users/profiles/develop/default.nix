@@ -4,6 +4,7 @@
   gradle = import ./gradle.nix;
   haskell = import ./haskell.nix;
   kotlin = import ./kotlin.nix;
+  mkdocs = import ./mkdocs.nix;
   ocaml = import ./ocaml.nix;
   python = import ./python.nix;
   rust = import ./rust.nix;
