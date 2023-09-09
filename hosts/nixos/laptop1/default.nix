@@ -124,6 +124,7 @@
         profiles.gpg
         profiles.mail.evolution
         profiles.tool.gh
+        profiles.tool.bat
       ] ++ (with profiles.vscode; [
         profiles.vscode.suites.base
         theme.ayu-light

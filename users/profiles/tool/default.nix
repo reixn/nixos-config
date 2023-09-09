@@ -1,4 +1,5 @@
 {
+  bat = import ./bat.nix;
   bottom = import ./bottom.nix;
   htop = import ./htop;
   tmux = import ./tmux;
