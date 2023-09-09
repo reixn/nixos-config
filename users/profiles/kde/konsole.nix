@@ -1,12 +1,16 @@
-{ pkgs, lib, ...}:
+{ config, pkgs, lib, ...}:
 let
   cascadia = "Cascadia Code PL,10,-1,5,50,0,0,0,0,0";
   historySize = 5000;
 in {
-  xdg.configFile."konsolerc".text = lib.generators.toINI {} {
+  xdg.configFile."konsolerc".text = lib.generators.toINI {} ({
     "Desktop Entry".DefaultProfile = "default_light.profile";
     TabBar.NewTabBehavior = "PutNewTabAfterCurrentTab";
-  };
+  } // (if config.theme.type == "dark" then {
+    "Desktop Entry".DefaultProfile = "default_dark.profile";
+  } else if config.theme.type == "light" then {
+    "Desktop Entry".DefaultProfile = "default_light.profile";
+  } else {}));
   xdg.dataFile = {
     "konsole/default_light.profile".text = lib.generators.toINI {} {
       Appearance = {
