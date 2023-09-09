@@ -1,5 +1,6 @@
 let
   config = {
+    theme = import ./theme;
     bluedevil = import ./bluedevil.nix;
     disable-baloo = import ./disable-baloo.nix;
     dolphin = import ./dolphin.nix;
@@ -11,6 +12,7 @@ in config // {
   suites = {
     base = { ... }: {
       imports = with config; [
+        theme
         dolphin
         konsole
         disable-baloo
