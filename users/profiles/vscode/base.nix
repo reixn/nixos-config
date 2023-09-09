@@ -9,6 +9,7 @@
       "editor.formatOnType" = true;
       "terminal.integrated.cursorStyle" = "line";
       "extensions.autoUpdate" = false;
+      "window.autoDetectColorScheme" = true;
     };
   };
 }
