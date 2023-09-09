@@ -66,6 +66,7 @@
                 useGlobalPkgs = true;
                 sharedModules = [
                   home.modules.xvim
+                  home.modules.theme_info
                 ];
               };
             })
