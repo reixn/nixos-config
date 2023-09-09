@@ -3,6 +3,7 @@ let
     theme = import ./theme;
     bluedevil = import ./bluedevil.nix;
     disable-baloo = import ./disable-baloo.nix;
+    mute = import ./mute.nix;
     dolphin = import ./dolphin.nix;
     kate = import ./kate.nix;
     konsole = import ./konsole.nix;
@@ -16,6 +17,7 @@ in config // {
         dolphin
         konsole
         disable-baloo
+        mute
       ];
     };
   };
