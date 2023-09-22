@@ -11,6 +11,7 @@
       "[css]" = formatter_cfg;
       "[typescript]" = formatter_cfg;
       "[json]"."editor.defaultFormatter" = "vscode.json-language-features";
+      "[jsonc]"."editor.defaultFormatter" = "vscode.json-language-features";
     };
   };
 }
