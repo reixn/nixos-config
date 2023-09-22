@@ -9,6 +9,7 @@
       "[javascript]" = formatter_cfg;
       "[html]" = formatter_cfg;
       "[css]" = formatter_cfg;
+      "[typescript]" = formatter_cfg;
       "[json]"."editor.defaultFormatter" = "vscode.json-language-features";
     };
   };
