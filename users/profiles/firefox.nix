@@ -43,7 +43,7 @@
               description = "Bing Global";
               urls = [
                 {
-                  template = "https://global.bing.com";
+                  template = "https://global.bing.com/search";
                   params = [
                     { name = "q"; value = "{searchTerms}"; }
                     { name = "mkt"; value = "en-US"; }
