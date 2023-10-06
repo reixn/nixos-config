@@ -2,6 +2,7 @@ let
   profiles = {
     develop = import ./develop;
     direnv = import ./direnv;
+    helix = import ./helix;
     kde = import ./kde;
     mail.evolution = import ./mail/evolution.nix;
     tool = import ./tool;
