@@ -10,6 +10,7 @@
     profiles.tools.bat
     profiles.tools.starship
     users.reixn.base
+    users.test-user.base
   ];
 
   # Bootloader.
@@ -61,10 +62,9 @@
     users = let
       pass-store = "/nix/user-pass";
     in {
-      dave = {
+      test-user = {
         uid = 1010;
-        isNormalUser = true;
-        passwordFile = "${pass-store}/dave";
+        passwordFile = "${pass-store}/test-user";
         createHome = true;
       };
       reixn = {
@@ -137,7 +137,7 @@
 
       home.stateVersion = "22.11";
     };
-    dave = { profiles, suites, ... }: {
+    test-user = { profiles, suites, ... }: {
       imports = [
         suites.laptop
         profiles.kde.bluedevil

@@ -33,6 +33,7 @@
       };
       users = {
         reixn.base = import ./users/reixn/base.nix;
+        test-user.base = import ./users/test-user/base.nix;
       };
       home = {
         modules = import ./users/modules;
