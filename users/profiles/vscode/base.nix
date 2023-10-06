@@ -1,6 +1,7 @@
 { pkgs, ...}: {
   programs.vscode = {
     enable = true;
+    package = pkgs.vscodium;
     extensions = [ pkgs.vscode-extensions.editorconfig.editorconfig ];
     userSettings = {
       "editor.fontFamily" = "'Cascadia Code', 'Droid Sans Mono', 'monospace', monospace";

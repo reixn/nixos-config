@@ -54,7 +54,6 @@
                   overlays.overrides
                   overlays.pkgs
                 ];
-                config.allowUnfree = true;
               };
             })
             home-manager.nixosModules.home-manager
