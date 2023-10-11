@@ -48,6 +48,8 @@
           "Source"
           "Documents"
           ".local/share/gopass/stores"
+          ".local/share/kwalletd"
+          ".local/share/evolution"
           ".mozilla/firefox/default/bookmarkbackups"
         ];
         files = [
