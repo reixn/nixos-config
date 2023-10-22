@@ -136,6 +136,7 @@
 
       home.packages = [
         pkgs.gopass
+        pkgs.git-annex
       ];
 
       home.stateVersion = "22.11";
