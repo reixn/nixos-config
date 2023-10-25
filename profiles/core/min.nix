@@ -16,6 +16,13 @@
       trusted-users = [ "root" "@wheel" ];
     };
 
+    registry = {
+      nixpkgs.to = {
+        type = "path";
+        path = pkgs.path;
+      };
+    };
+
     # Generally useful nix option defaults
     extraOptions = ''
       min-free = 536870912
