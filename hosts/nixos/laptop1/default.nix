@@ -151,5 +151,8 @@
     };
   };
 
-  nix.settings.substituters = [ "https://mirrors.bfsu.edu.cn/nix-channels/store" ];
+  nix.settings = {
+    substituters = [ "https://mirrors.bfsu.edu.cn/nix-channels/store" ];
+    keep-outputs = true; # keep build input drv
+  };
 }
