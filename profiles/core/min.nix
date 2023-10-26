@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     coreutils
@@ -17,10 +17,7 @@
     };
 
     registry = {
-      nixpkgs.to = {
-        type = "path";
-        path = pkgs.path;
-      };
+      nixpkgs.flake = inputs.nixpkgs;
     };
 
     # Generally useful nix option defaults
