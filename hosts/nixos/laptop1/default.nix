@@ -153,6 +153,7 @@
 
   nix.settings = {
     substituters = [ "https://mirrors.bfsu.edu.cn/nix-channels/store" ];
+    flake-registry = "";
     keep-outputs = true; # keep build input drv
   };
 }
