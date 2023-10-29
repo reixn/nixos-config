@@ -13,6 +13,7 @@
   ocaml = import ./ocaml.nix;
   powershell = import ./powershell.nix;
   python = import ./python.nix;
+  racket = import ./racket.nix;
   ron = import ./ron.nix;
   rust = import ./rust.nix;
   scala = import ./scala.nix;
