@@ -137,6 +137,7 @@
       home.packages = [
         pkgs.gopass
         pkgs.git-annex
+        pkgs.vlc
       ];
 
       home.stateVersion = "22.11";
