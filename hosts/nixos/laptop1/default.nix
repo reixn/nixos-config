@@ -8,7 +8,7 @@
       profiles.plasma
       profiles.tools.bat
       profiles.tools.starship
-      profiles.mirror.container
+      # profiles.mirror.container
     ];
 
   # Bootloader.
@@ -53,22 +53,22 @@
 
   services.fstrim.enable = true;
 
-  networking.hosts = {
-    "127.0.0.1" = [
-      "ajax.googleapis.com"
-      "ghc.haskell.home.arpa"
-      "haddock.haskell.home.arpa"
-    ];
-  };
-  containers.mirror = {
-    autoStart = false;
-    config = { ... }: {
-      imports = [
-        profiles.mirror.googleapis.ajax
-        profiles.mirror.haskell.ghc
-      ];
-    };
-  };
+  # networking.hosts = {
+  #   "127.0.0.1" = [
+  #     "ajax.googleapis.com"
+  #     "ghc.haskell.home.arpa"
+  #     "haddock.haskell.home.arpa"
+  #   ];
+  # };
+  # containers.mirror = {
+  #   autoStart = false;
+  #   config = { ... }: {
+  #     imports = [
+  #       profiles.mirror.googleapis.ajax
+  #       profiles.mirror.haskell.ghc
+  #     ];
+  #   };
+  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -96,7 +96,7 @@
       };
       use_fs_keyring_for_v1_policies =  false;
       allow_cross_user_metadata = false;
-    }; 
+    };
   };
 
   home-manager.users = {
@@ -111,7 +111,7 @@
           profiles.tool.gh
         ];
 
-      home.stateVersion = "22.05"; 
+      home.stateVersion = "22.05";
     };
   };
 
