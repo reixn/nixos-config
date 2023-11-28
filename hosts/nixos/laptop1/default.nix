@@ -111,6 +111,23 @@
 
   services.fstrim.enable = true;
 
+  # networking.hosts = {
+  #   "127.0.0.1" = [
+  #     "ajax.googleapis.com"
+  #     "ghc.haskell.home.arpa"
+  #     "haddock.haskell.home.arpa"
+  #   ];
+  # };
+  # containers.mirror = {
+  #   autoStart = false;
+  #   config = { ... }: {
+  #     imports = [
+  #       profiles.mirror.googleapis.ajax
+  #       profiles.mirror.haskell.ghc
+  #     ];
+  #   };
+  # };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leavecatenate(variables, "bootdev", bootdev)
