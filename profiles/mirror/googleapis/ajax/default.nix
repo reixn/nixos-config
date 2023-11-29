@@ -26,11 +26,13 @@
         };
       };
     };
-  };
 
-  networking.hosts = {
-    "127.0.0.1" = [
-      "ajax.googleapis.com"
-    ];
+    services.coredns.config = ''
+      ajax.googleapis.com {
+        hosts /dev/null {
+          127.0.0.1 ajax.googleapis.com
+        }
+      }
+    '';
   };
 }

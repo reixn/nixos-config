@@ -21,10 +21,21 @@ in
     };
     config = { ... }: {
       users = user_group;
+
       services.nginx = {
         enable = true;
         user = "mirror";
         group = "mirror";
+      };
+
+      services.coredns = {
+        enable = true;
+        config = ''
+          . {
+            forward . 8.8.4.4 1.1.1.1
+            cache
+          }
+        '';
       };
     };
   };
