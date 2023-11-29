@@ -13,6 +13,7 @@
     profiles.mirror.base
     profiles.mirror.firefox
     profiles.mirror.googleapis.ajax
+    profiles.mirror.google.recaptcha
 
     users.reixn.base
     users.test-user.base
