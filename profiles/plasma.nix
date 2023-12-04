@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  fonts.fonts = [ pkgs.cascadia-code ];
+  fonts.packages = [ pkgs.cascadia-code ];
 
   # Enable the X11 windowing system.
   services.xserver = {

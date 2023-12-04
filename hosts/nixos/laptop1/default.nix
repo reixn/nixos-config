@@ -74,12 +74,12 @@
     in {
       test-user = {
         uid = 1010;
-        passwordFile = "${pass-store}/test-user";
+        hashedPasswordFile = "${pass-store}/test-user";
         createHome = true;
       };
       reixn = {
         uid = 1000;
-        passwordFile = "${pass-store}/reixn";
+        hashedPasswordFile = "${pass-store}/reixn";
         createHome = true;
       };
     };

@@ -4,11 +4,10 @@
   environment.systemPackages = with pkgs; [
     bat
     curl
-    dogdns
     duf
     du-dust
     dnsutils
-    exa
+    eza
     fd
     htop
     httpie
