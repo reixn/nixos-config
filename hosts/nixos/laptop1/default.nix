@@ -41,11 +41,13 @@
       "/etc/nixos"
       "/etc/NetworkManager/system-connections"
       "/var/lib/bluetooth"
+      "/var/lib/systemd/catalog" # journal catalog
+      "/var/lib/systemd/timers" # fstrim timer
+      "/var/log"
       "/var/mirror"
     ];
     files = [
       "/etc/machine-id"
-      "/var/lib/systemd/timers/stamp-fstrim.timer"
     ];
     users = {
       reixn = {
