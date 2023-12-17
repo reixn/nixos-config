@@ -1,8 +1,11 @@
-{pkgs, ...}: {
+{ inputs, system, pkgs, ...}: let
+  vscoq_pkg = inputs.vscoq.packages.${system};
+  exts = inputs.nix-vscode-extensions.extensions.${system};
+in {
   programs.vscode = {
-    extensions = [ pkgs.vscode-extensions.maximedenes.vscoq ];
+    extensions = [ exts.open-vsx.maximedenes.vscoq ];
     userSettings = {
-      "coqtop.binPath" = "${pkgs.coq.outPath}/bin";
+      "vscoq.path" = "${vscoq_pkg.vscoq-language-server}/bin/vscoqtop";
     };
   };
 }

@@ -9,6 +9,23 @@
       home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
       impermanence.url = "github:nix-community/impermanence";
+
+      # vscoq 2 extension
+      nix-vscode-extensions= {
+        url = "github:nix-community/nix-vscode-extensions";
+
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+
+      # vscoq 2 language server
+      vscoq = {
+        type = "github";
+        owner = "coq-community";
+        repo = "vscoq";
+        ref = "v2.0.3+coq8.18";
+
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
     };
 
   outputs =
@@ -16,6 +33,8 @@
     , nixpkgs
     , home-manager
     , impermanence
+    , vscoq
+    , nix-vscode-extensions
     , ...
     } @ inputs: let
       overlays = {
@@ -41,10 +60,12 @@
       };
     in {
       nixosConfigurations = {
-        laptop1 = nixpkgs.lib.nixosSystem {
+        laptop1 = let
           system = "x86_64-linux";
+        in nixpkgs.lib.nixosSystem {
+          inherit system;
           specialArgs = {
-            inherit inputs users;
+            inherit inputs users system;
             inherit (nixos) profiles suites;
           };
           modules = [
@@ -61,6 +82,7 @@
             ({...}: {
               home-manager = {
                 extraSpecialArgs = {
+                  inherit inputs system;
                   inherit (home) profiles suites;
                 };
                 useGlobalPkgs = true;
