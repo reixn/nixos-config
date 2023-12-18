@@ -1,6 +1,9 @@
 {
   antlr4 = import ./antlr4.nix;
-  coq = import ./coq.nix;
+  coq = {
+    vscoq = import ./coq/vscoq.nix;
+    coq-lsp = import ./coq/coq-lsp.nix;
+  };
   cpp = import ./cpp.nix;
   dhall = import ./dhall.nix;
   gradle = import ./gradle.nix;
